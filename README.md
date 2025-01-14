@@ -242,11 +242,12 @@ In proxy mode, you should include the user authentication token in the HTTP head
 
 Using spirit-gpu, when you call:
 ```
-curl -H "Auth: {your_serverless_id}-{your_api_key}" https://api-serverless.datastone.cn/api/generate -d '{
+curl -H "Authorization: {your_serverless_id}-{your_api_key}" https://api-serverless.datastone.cn/api/generate -d '{
   "model": "llama3.2",
   "prompt": "Why is the sky blue?"
 }'
 ```
+> Don't write `{` and `}` in your authroization header
 
 `spirit-gpu` will proxy the request to your local server at `http://localhost:11434` as shown below. Ensure that your LLM server is included in the Dockerfile and is started.
 
